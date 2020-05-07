@@ -1,6 +1,6 @@
 {
     "name": "lucius-digital/openlucius-project",
-    "description": "OpenLucius",
+    "description": "Base install of OpenLucius, a lean and fast social productivity platform.",
     "type": "project",
     "license": "GPL-2.0-or-later",
     "homepage": "https://www.drupal.org/project/openlucius",
