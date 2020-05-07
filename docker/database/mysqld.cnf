@@ -1,0 +1,9 @@
+[mysqld]
+max_allowed_packet = 4G
+innodb_data_file_path = ibdata1:10M:autoextend
+innodb_buffer_pool_size = 256M
+innodb_log_buffer_size = 128M
+innodb_log_file_size = 128M
+innodb_write_io_threads = 16
+innodb_flush_log_at_trx_commit = 0
+wait_timeout=30000

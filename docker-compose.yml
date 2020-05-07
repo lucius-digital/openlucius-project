@@ -1,0 +1,78 @@
+# Minimal docker for openlucius.localhost
+version: '3.5'
+
+services:
+  proxy:
+    networks:
+      default:
+    image: nginx:1.13.0-alpine
+    container_name: "openlucius_nginx"
+    depends_on:
+      - php
+    volumes:
+      - ./docker/proxy/nginx.conf:/etc/nginx/nginx.conf
+      - ./docker/proxy/cert.crt:/usr/share/ssl/cert.crt
+      - ./docker/proxy/cert.key:/usr/share/ssl/cert.key
+    ports:
+      - 80:80
+      - 443:443
+  apache:
+    networks:
+      default:
+    image: wodby/php-apache
+    working_dir: "/var/www/html/web"
+    volumes:
+      - ./web:/var/www/html/web:delegated
+      - ./docker/public_files:/var/www/html/web/sites/default/files
+      - ./docker/private_files:/var/www/private
+    container_name: 'openlucius_apache'
+    depends_on:
+     - php
+    env_file:
+     - ./.env
+
+  php:
+    networks:
+      default:
+    image: wodby/drupal-php:7.3
+    container_name: 'openlucius_php'
+    volumes:
+      - ./load.environment.php:/var/www/html/load.environment.php:delegated
+      - ./web:/var/www/html/web:delegated
+      - ./vendor:/var/www/html/vendor:delegated
+      - ./docker/web/settings.local.php:/var/www/html/web/sites/default/settings.php:delegated
+      - ./config:/var/www/html/config:delegated
+      - ./scripts:/var/www/html/scripts
+      - ./drush:/var/www/html/drush
+      - ./composer.json:/var/www/html/composer.json
+      - ./composer.lock:/var/www/html/composer.lock
+      - ./docker/web/development.services.yml:/var/www/html/web/sites/development.services.yml
+      - ./docker/public_files:/var/www/html/web/sites/default/files
+      - ./docker/private_files:/var/www/private
+    env_file:
+    - ./.env
+
+  database:
+    networks:
+      default:
+    image: mysql:5.7.18
+    ports:
+    - 3307:3306
+    volumes:
+    - ./docker/database:/docker-entrypoint-initdb.d:delegated
+    - ./docker/database/mysqld.cnf:/etc/mysql/conf.d/mysqld.cnf:delegated
+    container_name: 'openlucius_database'
+    env_file:
+    - ./.env
+
+  mailhog:
+    networks:
+      default:
+    ports:
+      - '8025:8025'
+    image: mailhog/mailhog
+    container_name: "openlucius_mailhog"
+
+networks:
+  default:
+    driver: bridge
