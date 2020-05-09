@@ -40,7 +40,7 @@
         },
         "installer-paths": {
             "web/core": ["type:drupal-core"],
-            "stream": ["type:openlucius-stream"],
+            "stream": ["lucius-digital/openlucius-stream"],
             "web/libraries/{$name}": ["type:drupal-library"],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
