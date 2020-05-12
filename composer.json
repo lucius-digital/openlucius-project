@@ -17,7 +17,6 @@
     "require": {
         "composer/installers": "^1.2",
         "luciusdigital/openlucius": "dev-master",
-        "luciusdigital/openlucius-stream": "dev-master",
         "drupal/core-project-message": "^9",
         "drupal/core-composer-scaffold": "^9"
     },
@@ -40,7 +39,6 @@
         },
         "installer-paths": {
             "web/core": ["type:drupal-core"],
-            "stream": ["lucius-digital/openlucius-stream"],
             "web/libraries/{$name}": ["type:drupal-library"],
             "web/modules/contrib/{$name}": ["type:drupal-module"],
             "web/profiles/contrib/{$name}": ["type:drupal-profile"],
@@ -60,9 +58,9 @@
                 "<bg=yellow;fg=black>                </>",
                 "<bg=yellow;fg=black>   Next steps   </>",
                 "<bg=yellow;fg=black>                </>",
-                "  * Install the site: https://www.drupal.org/docs/8/install",
-                "  * Read the user guide: https://www.drupal.org/docs/user_guide/en/index.html",
-                "  * Get support: https://www.drupal.org/project/issues/openlucius",
+                "  * Install guide: https://www.getlucius.com/en/product/open-source-install-guide",
+                "  * End-user guide: https://www.getlucius.com/en/product/groups-channels",
+                "  * Get support: https://www.drupal.org/project/openlucius",
                 "  * Remove the plugin that prints this message:",
                 "      composer remove drupal/core-project-message",
                 ""

@@ -1,0 +1,17 @@
+{
+    "name": "lucius-digital/openlucius-stream",
+    "type": "openlucius-stream",
+    "description": "Node.js / socket io implementation for realtimeness in OpenLucius, a Drupal distribution.",
+    "license": "GPL-2.0-or-later",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": {
+        "assets": {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    },
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
