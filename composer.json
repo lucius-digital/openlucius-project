@@ -46,25 +46,6 @@
             "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
             "web/modules/custom/{$name}": ["type:drupal-custom-module"],
             "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
-        },
-        "drupal-core-project-message": {
-            "include-keys": ["homepage", "support"],
-            "post-create-project-cmd-message": [
-                "",
-                "<bg=blue;fg=white>                                                              </>",
-                "<bg=blue;fg=white>  Congratulations, you’ve installed the OpenLucius codebase!  </>",
-                "<bg=blue;fg=white>                                                              </>",
-                "",
-                "<bg=yellow;fg=black>                </>",
-                "<bg=yellow;fg=black>   Next steps   </>",
-                "<bg=yellow;fg=black>                </>",
-                "  * Install guide: https://www.getlucius.com/en/product/open-source-install-guide",
-                "  * End-user guide: https://www.getlucius.com/en/product/groups-channels",
-                "  * Get support: https://www.drupal.org/project/issues/openlucius",
-                "  * Remove the plugin that prints this message:",
-                "      composer remove drupal/core-project-message",
-                ""
-            ]
         }
     }
 }
