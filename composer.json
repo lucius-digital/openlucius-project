@@ -16,9 +16,11 @@
 	},
     "require": {
         "composer/installers": "^1.2",
+        "drupal/admin_toolbar": "^2.2",
         "drupal/openlucius": "^2",
         "drupal/core-project-message": "^9",
-        "drupal/core-composer-scaffold": "^9"
+        "drupal/core-composer-scaffold": "^9",
+        "drupal/core-recommended": "^9"
     },
     "require-dev": {
         "drush/drush": "^10.2"
