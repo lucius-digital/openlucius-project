@@ -18,7 +18,7 @@ The project also contains these optional packages:
 Install it using Composer:
 
 ```
-composer create-project lucius-digital/openlucius-project:2.0.0-alpha7 MY_PROJECT_FOLDER
+composer create-project lucius-digital/openlucius-project:2.0.0-beta1 MY_PROJECT_FOLDER
 ```
 
 ## Install manual
