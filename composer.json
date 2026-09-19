@@ -1,51 +1,55 @@
 {
-    "name": "lucius-digital/openlucius-project",
-    "description": "Base install of OpenLucius, a lean and fast social productivity platform.",
-    "type": "project",
-    "license": "GPL-2.0-or-later",
-    "homepage": "https://www.drupal.org/project/openlucius",
-	"repositories": {
-	    "drupal": {
-	        "type": "composer",
-	        "url": "https://packages.drupal.org/8"
-	    },
-	    "assets": {
-	        "type": "composer",
-	        "url": "https://asset-packagist.org"
-	    }
-	},
-    "require": {
-        "composer/installers": "^1.2",
-        "lucius-digital/openlucius": "^2",
-        "drupal/core-project-message": "^9",
-        "drupal/core-composer-scaffold": "^9"
+  "name": "lucius-digital/openlucius-project",
+  "description": "Base install of OpenLucius, a lean and fast social productivity platform.",
+  "type": "project",
+  "license": "GPL-2.0-or-later",
+  "homepage": "https://www.drupal.org/project/openlucius",
+  "repositories": {
+    "drupal": {
+      "type": "composer",
+      "url": "https://packages.drupal.org/8"
     },
-    "require-dev": {
-        "drush/drush": "^10.2"
-    },
-    "conflict": {
-        "drupal/drupal": "*"
-    },
-    "minimum-stability": "dev",
-    "prefer-stable": true,
-    "config": {
-        "sort-packages": true
-    },
-    "extra": {
-        "drupal-scaffold": {
-            "locations": {
-                "web-root": "web/"
-            }
-        },
-        "installer-paths": {
-            "web/core": ["type:drupal-core"],
-            "web/libraries/{$name}": ["type:drupal-library"],
-            "web/modules/contrib/{$name}": ["type:drupal-module"],
-            "web/profiles/contrib/{$name}": ["type:drupal-profile"],
-            "web/themes/contrib/{$name}": ["type:drupal-theme"],
-            "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
-            "web/modules/custom/{$name}": ["type:drupal-custom-module"],
-            "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
-        }
+    "assets": {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
     }
+  },
+  "require": {
+    "composer/installers": "^1.2",
+    "lucius-digital/openlucius": "^3",
+    "drupal/core-composer-scaffold": "^11.4",
+    "drupal/core-recommended": "^11.4"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "composer/installers": true,
+      "drupal/core-composer-scaffold": true,
+      "drupal/core-project-message": true,
+      "symfony/runtime": true
+    },
+    "audit": {
+      "block-insecure": false
+    }
+  },
+  "extra": {
+    "enable-patching": true,
+    "drupal-scaffold": {
+      "locations": {
+        "web-root": "web/"
+      }
+    },
+    "installer-paths": {
+      "web/core": ["type:drupal-core"],
+      "web/libraries/{$name}": ["type:drupal-library"],
+      "web/modules/contrib/{$name}": ["type:drupal-module"],
+      "web/profiles/contrib/{$name}": ["type:drupal-profile"],
+      "web/themes/contrib/{$name}": ["type:drupal-theme"],
+      "drush/Commands/contrib/{$name}": ["type:drupal-drush"],
+      "web/modules/custom/{$name}": ["type:drupal-custom-module"],
+      "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
+    }
+  }
 }
