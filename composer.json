@@ -16,7 +16,7 @@
   },
   "require": {
     "composer/installers": "^1.2",
-    "lucius-digital/openlucius": "^3",
+    "lucius-digital/openlucius": "dev-master",
     "drupal/core-composer-scaffold": "^11.4",
     "drupal/core-recommended": "^11.4"
   },
