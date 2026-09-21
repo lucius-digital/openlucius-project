@@ -1,5 +1,6 @@
 {
   "name": "lucius-digital/openlucius-project",
+  "version": "dev-3.0.x",
   "description": "Base install of OpenLucius, a lean and fast social productivity platform.",
   "type": "project",
   "license": "GPL-2.0-or-later",
@@ -51,5 +52,10 @@
       "web/modules/custom/{$name}": ["type:drupal-custom-module"],
       "web/themes/custom/{$name}": ["type:drupal-custom-theme"]
     }
+  },
+  "scripts": {
+    "post-drupal-scaffold-cmd": [
+      "@php scripts/composer/setup-private-files.php"
+    ]
   }
 }
