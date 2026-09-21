@@ -7,10 +7,16 @@
  * This is needed here, because in profile .install this generates errors.
  * Those errors are caused mainly because the default file system is set to 'private' in system.file.yml,
  * and that is imported before install scripts are run.
- * That bites and gives a faulty 'private:/' folder in web-root.
+ * That bites and gives a faulty 'private:/' folder in web-root after install is completed.
  *
- * This install script only runs during initial install,
+ * This install script underneath only runs during initial 'composer install',
  * so if admin changes private file folder after install, that's ok.
+ *
+ * DDEV will handle this correctly:
+ * - 'ddev config' áfter 'composer install': settings.php already exists for ddev,
+ *   ddev will append her needed config on the bottom of the file.
+ * - 'ddev config' befóre 'composer install': settings.php already exists for OpenLucius,
+ *   script underneath will her needed config on the bottom of the file.
  */
 
 $projectRoot = dirname(__DIR__, 2);
