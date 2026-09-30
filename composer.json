@@ -1,6 +1,6 @@
 {
   "name": "lucius-digital/openlucius-project",
-  "version": "dev-3.0.x",
+  "version": "3.0.0-beta1",
   "description": "Base install of OpenLucius, a lean and fast social productivity platform.",
   "type": "project",
   "license": "GPL-2.0-or-later",
